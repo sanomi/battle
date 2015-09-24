@@ -1,0 +1,50 @@
+body {
+	background-color: black;
+	background-image: url('../evilO.jpg');
+	background-size: cover;
+	font-size: 1.5em;
+	color:#F3FFFB;
+}
+table {
+	display: inline-block;
+	color:black;
+}
+#placeBoats {
+	float: left;
+	margin-right: 50px;
+	margin-top: -28px;
+}
+td {
+	background-color: #F3FFFB;
+	height: 35px;
+	width: 35px;
+	border: solid black 2px;
+	margin: 5px;
+  cursor: pointer;
+}
+tr td:hover {
+  background-color: #DBE9FF;
+}
+.hit{
+	background-image: url('../ink.png') !important;
+	background-size: contain;
+}
+.ship {
+	background-color:black !important;
+}
+#title {
+	font-size: 2em;
+	 position: fixed;
+   bottom: 0;
+   left: 0;
+ }
+@media (max-width: 1015px ) {
+	body {
+		background-size: contain;
+		}
+	#placeBoats {
+		float: none;
+		margin-right: 0px;
+		}
+	}
+}

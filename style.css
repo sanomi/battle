@@ -1,0 +1,67 @@
+@font-face {
+	font-family: myFirstFont;
+	src: url(green-fuz.ttf);
+}
+body {
+	background-color: black;
+	background-image: url('evilOX.jpg');
+	background-size: cover;
+	color:#ABFEE4;
+	font-family: myFirstFont;
+}
+#mission {
+	font-size: 3.5vw;
+	position:fixed;
+  top: 50%;
+  left: 10%;
+  text-align: center;
+}
+h1 {
+	margin-top: -10px;
+	font-size: 6vw;
+	position: fixed;
+	right: 0;
+	top: 0;
+}
+button {
+	font-family: myFirstFont;
+	font-size: 3vw;
+	position: fixed;
+	border: solid black 2px;
+}
+#a {
+	top: 30%;
+	right: 22%;
+}
+#d {
+	top: 20%;
+	right: 25%;
+}
+
+@media (max-width: 1071px) {
+	h1 {
+		margin-top: 0px;
+	}
+	#a {
+		right: 5%;
+		top: 15%;
+	}	
+	#d {
+		right: 5%;
+		top: 10%;
+	}
+	#mission {
+		font-size: 6vw;
+	  top: 30%;
+	  left: 5%;
+	  right: 5%;
+	}
+	body {
+		background-size: 150%;
+	}
+}
+@media (max-width: 375px) {
+	button {
+		font-size: 5vw;
+	}
+}

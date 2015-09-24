@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<meta name='viewport' content="width=device-width">
+	<title>Player 2</title>
+	<link rel="stylesheet" href="style.css">
+	<script src='https://cdn.firebase.com/js/client/2.2.1/firebase.js'></script>
+</head>
+<body>
+	<div id="placeBoats">
+<h2>Your Ships</h2>
+<h4>Waiting for opponent....</h4>
+	<table>
+		<tr class='header'>
+			<td class='header'></td>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+			<td>G</td>
+			<td>H</td>
+			<td>I</td>
+			<td>J</td>
+		</tr>
+		<tr class='1'>
+			<td class='header'>1</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='2'>
+			<td class='header'>2</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='3'>
+			<td class='header'>3</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='4'>
+			<td class='header'>4</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class="5">
+			<td class='header'>5</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='6'>
+			<td class='header'>6</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='7'>
+			<td class='header'>7</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='8'>
+			<td class='header'>8</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='9'>
+			<td class='header'>9</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='10'>
+			<td class='header'>10</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+	</table>
+</div>
+<div id='guesses'>
+	<table >
+	<h2>Guesses</h2>
+		<tr class='header'>
+			<td class='header'></td>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+			<td>G</td>
+			<td>H</td>
+			<td>I</td>
+			<td>J</td>
+		</tr>
+		<tr class='1'>
+			<td class='header'>1</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='2'>
+			<td class='header'>2</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='3'>
+			<td class='header'>3</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='4'>
+			<td class='header'>4</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class="5">
+			<td class='header'>5</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='6'>
+			<td class='header'>6</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='7'>
+			<td class='header'>7</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='8'>
+			<td class='header'>8</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='9'>
+			<td class='header'>9</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+		<tr class='10'>
+			<td class='header'>10</td>
+			<td class='A'></td>
+			<td class='B'></td>
+			<td class='C'></td>
+			<td class='D'></td>
+			<td class='E'></td>
+			<td class='F'></td>
+			<td class='G'></td>
+			<td class='H'></td>
+			<td class='I'></td>
+			<td class='J'></td>
+		</tr>
+	</table>
+	</div>
+</body>
+<script src='jquery.js'></script>
+<script src='main.js' type="text/javascript"></script>
+</html>

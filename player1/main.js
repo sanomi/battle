@@ -70,7 +70,7 @@ function checkP2Match(player2Choices) {
   var opHits =[];
     $('#guesses td').click( function() {
       if (!myTurn) {return;}
-       $('h4').text('Waiting for Player 2 to guess.')
+       $('h4').text('Waiting for opponent to guess.')
       var guessCoOrd = $(this).attr('class') + $(this).parent().attr('class');
       if (player2Choices.indexOf(guessCoOrd) !== -1 ) {
         $(this).addClass('hit');
@@ -97,8 +97,8 @@ function explosions() {
     var gData2 = snapshot.val();
       var L = (gData2.p2).slice(0,1);
       var N = (gData2.p2).slice(1, (gData2.length));
-      $("#placeBoats ."+N+" ."+L).addClass('hit').removeClass('ship');
     if(player1Ships.indexOf(gData2.p2) != -1) {
+      $("#placeBoats ."+N+" ."+L).addClass('hit').removeClass('ship');
       hits.push(gData2.p2);
     } else {
         $("#placeBoats ."+N+" ."+L).css('background-color', 'transparent');

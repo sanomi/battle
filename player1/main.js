@@ -95,11 +95,11 @@ function explosions() {
     var hits = [];
   ref2G.on('child_added', function(snapshot) {
     var gData2 = snapshot.val();
-    if(player1Ships.indexOf(gData2.p2) != -1) {
-      hits.push(gData2.p2);
       var L = (gData2.p2).slice(0,1);
       var N = (gData2.p2).slice(1, (gData2.length));
       $("#placeBoats ."+N+" ."+L).addClass('hit').removeClass('ship');
+    if(player1Ships.indexOf(gData2.p2) != -1) {
+      hits.push(gData2.p2);
     } else {
         $("#placeBoats ."+N+" ."+L).css('background-color', 'transparent');
       }

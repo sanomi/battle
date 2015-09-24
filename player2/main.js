@@ -27,39 +27,50 @@ function init() {
   })
   $('#placeBoats td').on('click', selectShips);
   ref2.on('child_added', player2CoOrdSend);
-  player1CoOrd();
+  // player1CoOrd();
 }
+
 function player2CoOrdSend(snapshot) {
     var message = snapshot.val();
   };
-function player1CoOrd() {
+
+function player1CoOrd(maxShip) {
   ref1.on('child_added', function(snapshot) {
     var message = snapshot.val();
     player1Choices.push(message.co);
-    if (player1Choices.length === 16){
-      $('h4').text('Waiting for Player 1 to guess.')
+    if (player1Choices.length === 15 && maxShip===15){
+      $('h4').text('Waiting for opponent to guess.')
      checkP1Match(player1Choices);
     }
 });
 };
+
 function selectShips(){
-  if (maxShip === 16) {
+  var $this = $(this);
+  if (maxShip === 15) {
     alert("Out of Ships");
     $(this).off(); 
+    player1CoOrd(maxShip);
     return;
   }
+  if ($this.text() === "" && $this.attr('class') !== 'ship') {
     var co = $(this).attr('class') + $(this).parent().attr('class');
-    $(this).addClass('ship');
+    var LS = $this.attr('class');
+    var NS = $this.parent().attr('class');
+    var co = LS + NS;
+    $this.addClass('ship');
     ref2.push( {co: co });
     player2Ships.push(co);
     maxShip++;
     $(this).off(); 
+  }
 };
+
 function checkP1Match(player1Choices) {
   var opHits =[];
     $('#guesses td').click( function() {
       if (!myTurn) {return;}
-       $('h4').text('Waiting for Player 1 to guess.')
+       $('h4').text('Waiting for opponent to guess.')
       var guessCoOrd = $(this).attr('class') + $(this).parent().attr('class');
       if ( player1Choices.indexOf(guessCoOrd) !== -1 ) {
         $(this).addClass('hit');
@@ -68,7 +79,7 @@ function checkP1Match(player1Choices) {
         $(this).css('background-color', 'transparent');
       }
       $(this).off();
-      if (opHits.length ===16) {
+      if (opHits.length ===15) {
         alert('You won!');
           ref2.remove();
           ref1G.remove();
@@ -79,6 +90,7 @@ function checkP1Match(player1Choices) {
     })
       explosions();
 }
+
 function explosions() {
     var hits = [];
   ref1G.on('child_added', function(snapshot) {
@@ -87,10 +99,9 @@ function explosions() {
       hits.push(gData1.p1);
       var L = (gData1.p1).slice(0,1);
       var N = (gData1.p1).slice(1, (gData1.length));
-      console.log(L,N)
       $("#placeBoats ."+N+" ."+L).addClass('hit').removeClass('ship');
     }
-    if(hits.length === 16) {
+    if(hits.length === 15) {
       alert('you lost');
         ref2.remove();
         ref1G.remove();

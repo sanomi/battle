@@ -100,7 +100,9 @@ function explosions() {
       var L = (gData2.p2).slice(0,1);
       var N = (gData2.p2).slice(1, (gData2.length));
       $("#placeBoats ."+N+" ."+L).addClass('hit').removeClass('ship');
-    }
+    } else {
+        $("#placeBoats ."+N+" ."+L).css('background-color', 'transparent');
+      }
     if(hits.length === 15) {
       alert('you lost');
         ref2.remove();

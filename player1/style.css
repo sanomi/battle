@@ -16,8 +16,6 @@ table {
 }
 td {
 	background-color: #F3FFFB;
-	height: 35px;
-	width: 35px;
 	border: solid black 2px;
 	margin: 5px;
   cursor: pointer;
@@ -46,5 +44,18 @@ tr td:hover {
 		float: none;
 		margin-right: 0px;
 		}
+}
+@media (max-width: 480px) {
+	td {
+		width: 25px;
+	}
+	#placeBoats {
+		margin-right: 0px;
+	}
+}
+@media (min-width: 481px) {
+	td {
+		height: 35px;
+		width: 35px;
 	}
 }
